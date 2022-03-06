@@ -60,29 +60,40 @@ setTimeout(function exec() {
 }, 0);
 runWhileLoopForNSeconds(3);
 console.log('Third');
+first
+third
+second
+becuase of second is get time that why he is execute last in the program 
 ```
 
 6. Convert the synchronous code given below into asynchronous. If you execute this code it will print one, two and three. Change the code in such a way that it should print `one`, `three` and `two`. You are not allowed to move the code up and down.
 
 ```js
 console.log('one');
-console.log('two');
+console.log('two',100);
 console.log('three');
+
+one
+three
+two
 ```
 
 7. Convert the synchronous code given below into asynchronous. If you execute this code it will print one, two and three. Change the code in such a way that it should print `one`, `three` and `two`. You are not allowed to move the code up and down.
 
 ```js
 console.log('one');
-console.log('two');
+console.log('two', 1000);
 console.log('three');
 ```
-
 8. Write a function named `asyncForEach` that is similar to `forEach`. But `asyncForEach` is asynchronous in nature rather than synchronous.
 
 ```js
-funciton asyncForEach(){
-  //
+function asyncForEach(array, cb){
+  let arr = [];
+  for(let ele of array){
+     arr.push(ele);
+  }
+  return arr;
 }
 //  Output of the function below should be
 // one
@@ -96,6 +107,11 @@ console.log('three');
 
 9. Convert the following function into asynchronous. The output of the function will be
 
+```js
+console.log('First Call');
+[1, 2, 3, 4, 5].firEach((num) => console.log(num));
+console.log('Last Call');
+```
 <!-- First Call -->
 <!-- 1, 2, 3, 4, 5 -->
 <!-- Last Call -->
@@ -108,6 +124,6 @@ Convert the code below in such way that the output should be the one below
 
 ```js
 console.log('First Call');
-[1, 2, 3, 4, 5].firEach((num) => console.log(num));
+[1, 2, 3, 4, 5].firEach((num) => console.log(num), 100);
 console.log('Last Call');
 ```
