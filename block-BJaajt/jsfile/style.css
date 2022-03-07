@@ -1,0 +1,29 @@
+body {
+  background-color: bisque;
+}
+.container{
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: center;
+  margin-bottom: 10rem;
+}
+header {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+}
+input{
+  margin-bottom: 2rem;
+  padding: 0.8rem;
+  width: 400px;
+}
+img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+li {
+  list-style: none;
+}
