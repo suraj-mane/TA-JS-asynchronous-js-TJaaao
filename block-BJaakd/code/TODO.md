@@ -1,21 +1,27 @@
 1. Create a promise. Have it resolve with a value of `Promise Resolved!` in resolve after a delay of 1000ms, using `setTimeout`. Print the contents of the promise after it has been resolved by passing `console.log` to `.then`
 
 ```js
-let solve  = new Promise((resolved, reject) => 
- setTimeout(() => resolve(), 1000)).than(console.log('problem is solve'));
+let solve  = new Promise((resolve, reject) => {
+ setTimeout(() => {
+   resolve('Promise Resolved!')
+   }, 1000);
+  });
+  solve.than(console.log);
 ```
 
 2. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch`
 
 ```js
-let solveNot  = new Promise((resolve, reject) => 
- setTimeout(() => reject(), 1000)).catch(console.log('problem is not solve'));
+let solve  = new Promise((resolve, reject) => {
+   reject('Promise Resolved!')
+  });
+  solve.than(console.log);
 ```
 
 3. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch` and also use `.finally` to log message `Promise Settled!`.
 
 ```js
-let final = new Promise((resolve, reject) => reject('something wrong').catch(error).finally(console.log('Promise Settled!')));
+let final = new Promise((resolve, reject) =>{reject('something wrong')}.catch(error).finally(console.log('Promise Settled!')));
 ```
 
 4. What will be the output of the code below
@@ -41,9 +47,9 @@ console.log('D');
 
 ```js
 function wait(time){
-  return new Promise((resolve, reject) => setTimeout(() => resolve(5), time));
+  return new Promise((resolve, reject) => setTimeout(() => resolve('Promise resolved'), time));
 };
-wait(1);
+wait(1).than(console.log);
 ```
 
 6. Do the following:
@@ -56,7 +62,7 @@ wait(1);
 - Catch the error using `.catch`
 
 ```js
-let first = new Promise((resolve, reject) => resolve(21).than(function(value){ console.log(value)}).than(100).than((value > 100)).catch(error));
+let first = new Promise((resolve, reject) => resolve(21).than((value) => value +10).than((value) value + 100).than(value => if(value > 100){ throw new Error('Something went wrong!')}).catch(console.log ));
 ```
 
 7. Do the following:
@@ -94,7 +100,7 @@ let first = new Promise ((resolve, reject) => resolve(1).than(function(value){ r
 ```
 
 10. Try to understand the difference between the problem 8 and 9. Write your observation.
-Answer - I can not understand difference between two.
+Answer - in first example than is used after promies and in next example they are used than at all time.
 11. Do the following
 
 - Create a promise and resolve it with `John`
