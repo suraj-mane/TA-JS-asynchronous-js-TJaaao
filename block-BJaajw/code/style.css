@@ -1,0 +1,44 @@
+body{
+  background-color: bisque;
+}
+
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  text-align: center;
+}
+.select {
+  width: 400px;
+  border: none;
+  padding: 1rem;
+}
+h1 {
+  background-color: black;
+  color: white;
+  padding: 1.5rem 0;
+}
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2,500px);
+  margin: 20px;
+}
+.photo {
+  width: 100%;
+}
+.title {
+  font-size: 1.5rem;
+}
+.text {
+  font-size: 1.2rem;
+}
+.btn {
+  padding: 1rem;
+  width: 100px;
+  border: none;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+}
