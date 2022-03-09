@@ -1,14 +1,14 @@
-let first = new Promise((resolve, reject) => 
-setTimeout(() => resolve(5), 1000)
+let first = new Promise((resolve) => 
+setTimeout(() => resolve(Math.random()), 1000)
 );
-let secound = new Promise((resolve, reject) => 
-setTimeout(() => resolve(5), 2000)
+let secound = new Promise((resolve) => 
+setTimeout(() => resolve(Math.random()), 2000)
 );
-let three = new Promise((resolve, reject) => 
-setTimeout(() => resolve(5), 3000)
+let three = new Promise((resolve) => 
+setTimeout(() => resolve(Math.random()), 3000)
 );
-let four = new Promise((resolve, reject) => 
-setTimeout(() => resolve(5), 4000)
+let four = new Promise((resolve) => 
+setTimeout(() => resolve(Math.random()), 4000)
 );
 Promise.all([first,secound,three,four]);
 
@@ -21,8 +21,8 @@ userName = [
   'ivey'
 ];
 
-userName.forEach(element => {
-  fetch(`https:// api.github/user/${element}`).then((res) => res.json()).then((info) => {console.log(info.follower)});
+let name = userName.map((user) => {
+  return fetch(`https://api.github.com/users/${user}`).then((res) => res.json()).then((data) => {console.log(data.followers)});
 });
 
 let first = fetch('https://random.dog/woof.json').then((res) => res.json());
